@@ -1,0 +1,76 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "PlayerInput",
+            "id": "8ad56aec-1c0b-4cec-8d7a-e69206379fae",
+            "actions": [
+                {
+                    "name": "Draw",
+                    "type": "Button",
+                    "id": "4e44c76d-c6e0-4a9d-b881-2d549fa7b6f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DrawEnd",
+                    "type": "Button",
+                    "id": "bc1ef988-bb0e-4c54-b753-2d699eb530b4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d391b093-6a55-4a0b-a8a2-f1d372c0ab8c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Draw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca62aad3-466e-4272-ae8e-25e05cd34227",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Draw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59e49efd-236e-4598-bfec-d362cea0b5d6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrawEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee9517e4-8921-42d3-8953-3299b9603e45",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrawEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
