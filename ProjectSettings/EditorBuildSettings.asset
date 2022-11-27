@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Balloon Tower/Scene/BalloonScene.unity
+    guid: dc4795a438e544e50b71b86afa292cea
+  - enabled: 1
+    path: Assets/DrawChute/Scene/DrawScene.unity
+    guid: a0b7fd9b5ed324d60bca44a412f13f90
   m_configObjects: {}

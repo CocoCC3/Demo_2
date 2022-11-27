@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Balloon_Tower.Scripts
 {
@@ -9,11 +12,18 @@ namespace Balloon_Tower.Scripts
         private Transform _targetPos;
         private bool _canMove;
         private float _movementSpeed;
+        private Vector3 randomPos;
         
         private void Awake()
         {
             _mainRig = GetComponent<Rigidbody>();
             _mainMesh = GetComponent<MeshRenderer>();
+        }
+
+        private void Start()
+        {
+            randomPos = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.7f, 0.7f), Random.Range(-0.5f, 0.5f));
+            StartCoroutine(CheckIsArrive());
         }
 
         void Update()
@@ -41,7 +51,7 @@ namespace Balloon_Tower.Scripts
             if (!_canMove) return;
 
             var myPosition = transform.position;
-            var targetPosition = _targetPos.position;
+            var targetPosition = _targetPos.position + randomPos;
             myPosition = Vector3.Slerp(myPosition, targetPosition, (Time.deltaTime * _movementSpeed) / Vector3.Distance(targetPosition, myPosition));
             transform.position = myPosition;
         }
@@ -56,6 +66,13 @@ namespace Balloon_Tower.Scripts
         {
             _mainMesh.materials[0].color = myData.balloonColor;
             _movementSpeed = myData.moveSpeed;
+        }
+
+        IEnumerator CheckIsArrive()
+        {
+            yield return new WaitForSeconds(4f);
+            if (!_canMove) yield return null;
+            _canMove = false;
         }
     }
 }
